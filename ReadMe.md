@@ -26,10 +26,10 @@ This software is for experimental purposes only and is not meant for any illegal
 
 <a name="latest">
 
-## Latest Updates - [PATREON: Latest Release RM0127-0440-0.75.1-a1f30a6](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
+## Latest Updates - [PATREON: Latest Release RM0128-1632-0.75.1-d309506](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release) 
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-01-27 02:36 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-01-27 02:36 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-01-27 11:03 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-01-27 11:03 EST`
 - Renamed RM Clock to Dab Timer
 - Passport XP Bar Design Updated [(Thanks to ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/510)
 - Renamed: [iOS Bluetooth Trigger (By Nem0oo)](https://github.com/Nem0oo/flipper-zero_ios-bluetooth-trigger) to [Camera Trigger (By Nem0oo)](https://github.com/Nem0oo/flipper-zero_ios-bluetooth-trigger)
@@ -41,7 +41,6 @@ This software is for experimental purposes only and is not meant for any illegal
 - OFW: Crash fix: [ELF-loader: wait for notification to complete on app exit #2335](https://github.com/flipperdevices/flipperzero-firmware/pull/2335)
 - Updated: [Slot Machine (By Daniel-dev-s)](https://github.com/Daniel-dev-s/flipperzero-slots)
 - [Patreon Build Update](https://www.patreon.com/RogueMaster/membership): ALL, Anime and RM Select builds now have 8 more new animations [(Thanks to IoriKesso)](https://github.com/IoriKesso/Flipper-Zero-Anime-Wallpapers)
-- Updated: [Scope (By anfractuosity)](https://github.com/anfractuosity/flipperscope)
 - Updated: [Orgasmotron (By qqmajikpp)](https://github.com/qqmajikpp/flipperzero-firmware-wPlugins) [Updated by jbohack](https://github.com/jbohack)
 - OFW: Crash fix: [nfc: Fix crash when using debug PCAP trace #2338](https://github.com/flipperdevices/flipperzero-firmware/pull/2338)
 - Added: Bluetooth Remote: [Add camera control mode to bluetooth remote app. #2336 (By LoganMD)](https://github.com/flipperdevices/flipperzero-firmware/pull/2336)
@@ -55,10 +54,21 @@ This software is for experimental purposes only and is not meant for any illegal
 - OFW: [NFC: add MIFARE MINI support #2307 (By giacomoferretti)](https://github.com/flipperdevices/flipperzero-firmware/pull/2307)
 - OFW: [emv: parse track1&2 equivalent data](https://github.com/flipperdevices/flipperzero-firmware/pull/2332)
 - OFW: [nfc: Fix sector reads when one block is unreadable for MIFARE Classic](https://github.com/flipperdevices/flipperzero-firmware/pull/2296)
-- Updated: [Protocol Visualizer (By antirez)](https://github.com/antirez/protoview)
 - Added: [Nightstand Clock (By nymda)](https://github.com/nymda/FlipperNightStand)
 - Updated: [Dab Timer (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/tree/420/applications/main/clock) [Original (By CompaqDisc)](https://gist.github.com/CompaqDisc/4e329c501bd03c1e801849b81f48ea61) [12/24HR (By non-bin)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/254) [Refactoring (By GMMan)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/256) [Using Analog Clock (By scrolltex)](https://github.com/scrolltex/flipper_analog_clock) (Now Has Clock Face Options!)
 - Fixed some missing app icons
+- Changed images and fixed text position for RFID and NFC
+- OFW: [NFC: change from int8_t to uint8_t](https://github.com/flipperdevices/flipperzero-firmware/pull/2302)
+- OFW: [debug apps: made runnable as .faps; sdk: resolved additional APIs in use by faps](https://github.com/flipperdevices/flipperzero-firmware/pull/2333)
+- Added: [Make ir_remote folder if not exist #2 (Thanks to plarikus)](https://github.com/Hong5489/ir_remote/pull/2)
+- [Patreon Builds Update: Added Controller, Alien Coke and SSJ3 animations to ALL build. Added Controller animation to RM select builds. Added SSJ3 animation to Select, Anime and DBZ Builds as well.](https://github.com/RogueMaster/awesome-flipperzero-withModules/tree/rogue_main/graphics)
+- [Patreon Build Update](https://www.patreon.com/RogueMaster/membership): ALL, Anime and RM Select builds now have 6 more new animations [(Thanks to IoriKesso)](https://github.com/IoriKesso/Flipper-Zero-Anime-Wallpapers)
+- [Patreon Build Update](https://www.patreon.com/RogueMaster/membership): ALL builds now have 199 more new animations [(Thanks to mnenkov)](https://github.com/mnenkov/flipper-zero-animations)
+- Updated: [Dice (RM) Including SEX/WAR/8BALL/WEED/DRINK DICE (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/applications/dice/dice.c) (Now Includes Drinking Dice and a black background with white letters)
+- Desktop: Hold Right goes to About with Battery Info [(Thanks to Willy-JL)](https://github.com/Willy-JL)
+- Updated: [Protocol Visualizer (By antirez)](https://github.com/antirez/protoview)
+- Updated: [Scope (By anfractuosity)](https://github.com/anfractuosity/flipperscope)
+
 
 <a name="release">
 
@@ -158,6 +168,7 @@ $ ./fbt dolphin_ext
 - Bluetooth Remote + USB Keyboard: [Added movement interval in mouse_jiggler USB & BLE #303 (By DocKuro)](https://github.com/DarkFlippers/unleashed-firmware/pull/303)
 - Clock: Clock.fap loader apps and available as Favorites [Thanks to ESurge](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/336)
 - Desktop: Hidden top bar [Thanks to ESurge](https://github.com/ESurge/)
+- Desktop: Hold Right goes to About with Battery Info [(Thanks to Willy-JL)](https://github.com/Willy-JL)
 - Desktop: Exclude icons on the left and show minimal battery [Thanks to skizzophrenic/Talking-Sasquach](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/360)
 - Development free space thanks to removal of unused debug tools and [thanks to ESurge](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/46/files) for removal of first start assets.
 - Dolphin: Assigned profile pic for levels 1-10 (Happy Lvl 1 Dolphin), 11-15 (Happy Lvl 2 Dolphin), 16-18 (Happy Lvl 3 Dolphin), 19-21 (Kid G0ku), 22-24 (Adult G0ku), 25-27 (SSJ G0ku) and 28-30 (SSJ3 G0ku)
@@ -237,7 +248,7 @@ $ ./fbt dolphin_ext
 - [Arkanoid (By gotnull)](https://github.com/gotnull/flipperzero-firmware-wPlugins) [(Score By DevMilanIan)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/188)
 - [Asteroids (By antirez)](https://github.com/antirez/flipper-asteroids) [(Modified By SimplyMinimal)](https://github.com/SimplyMinimal/FlipperZero-Asteroids)
 - [BlackJack (By teeebor)](https://github.com/teeebor/flipper_games)
-- [Dice Roller Including SEX/WAR/8BALL/WEED DICE (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/applications/dice/dice.c)
+- [Dice (RM) Including SEX/WAR/8BALL/WEED/DRINK DICE (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/applications/dice/dice.c)
 - [Dice (By Ka3u6y6a)](https://github.com/Ka3u6y6a/flipper-zero-dice)
 - [Doom (By p4nic4ttack)](https://github.com/p4nic4ttack/doom-flipper-zero/)
 - [Etch-A-Sketch (By SimplyMinimal)](https://github.com/SimplyMinimal/FlipperZero-Etch-A-Sketch)
