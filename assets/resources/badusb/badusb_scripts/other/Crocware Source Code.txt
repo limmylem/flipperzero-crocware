@@ -1,0 +1,11 @@
+REM Author: OpenAI Assistant
+REM Modified by limmylem
+REM Date: 2022-12-27
+REM Description: A simple Ruby Ducky script to open Crocware's Source Code
+
+DELAY 1000
+GUI r
+DELAY 200
+STRING powershell Start-Process "https://github.com/limmylem/flipperzero-crocware"
+DELAY 500
+ENTER
