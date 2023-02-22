@@ -120,9 +120,6 @@ void subghz_scene_read_raw_on_enter(void* context) {
         subghz->txrx->receiver, SUBGHZ_PROTOCOL_RAW_NAME);
     furi_assert(subghz->txrx->decoder_result);
 
-    // make sure we're not in auto-detect mode, which is only meant for the Read app
-    subghz_protocol_decoder_raw_set_auto_mode(subghz->txrx->decoder_result, false);
-
     //set filter RAW feed
     subghz_receiver_set_filter(subghz->txrx->receiver, SubGhzProtocolFlag_RAW);
     view_dispatcher_switch_to_view(subghz->view_dispatcher, SubGhzViewIdReadRAW);
@@ -411,7 +408,7 @@ bool subghz_scene_read_raw_on_event(void* context, SceneManagerEvent event) {
 
             float rssi = furi_hal_subghz_get_rssi();
 
-            if(float_is_equal(subghz->txrx->raw_threshold_rssi, SUBGHZ_RAW_TRESHOLD_MIN)) {
+            if(float_is_equal(subghz->txrx->raw_threshold_rssi, SUBGHZ_RAW_THRESHOLD_MIN)) {
                 subghz_read_raw_add_data_rssi(subghz->subghz_read_raw, rssi, true);
                 subghz_protocol_raw_save_to_file_pause(
                     (SubGhzProtocolDecoderRAW*)subghz->txrx->decoder_result, false);
@@ -462,10 +459,6 @@ void subghz_scene_read_raw_on_exit(void* context) {
     subghz->state_notifications = SubGhzNotificationStateIDLE;
     notification_message(subghz->notifications, &sequence_reset_rgb);
 
-//filter restoration
-#ifdef SUBGHZ_SAVE_DETECT_RAW_SETTING
-    subghz_last_settings_set_detect_raw_values(subghz);
-#else
-    subghz_receiver_set_filter(subghz->txrx->receiver, SubGhzProtocolFlag_Decodable);
-#endif
+    //filter restoration
+    subghz_receiver_set_filter(subghz->txrx->receiver, subghz->txrx->filter);
 }
