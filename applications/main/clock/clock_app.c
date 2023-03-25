@@ -9,9 +9,9 @@
 #include <notification/notification.h>
 #include <notification/notification_messages.h>
 #include "applications/settings/desktop_settings/desktop_settings_app.h"
-#include "Clock_icons.h"
+#include "Dab_Timer_icons.h"
 
-#define TAG "Clock"
+#define TAG "DabTimer"
 #define CLOCK_ISO_DATE_FORMAT "%.4d-%.2d-%.2d"
 #define CLOCK_RFC_DATE_FORMAT "%.2d-%.2d-%.4d"
 #define CLOCK_TIME_FORMAT "%.2d:%.2d:%.2d"
@@ -359,7 +359,6 @@ static void clock_render_callback(Canvas* const canvas, void* ctx) {
         canvas_draw_str_aligned(canvas, 64, 8, AlignCenter, AlignCenter, time_string); // DRAW TIME
         if(state->w_test && timer_start_timestamp != 0) {
             int32_t elapsed_secs_img = (elapsed_secs % 60) % 5;
-            int32_t elapsed_secs_img2 = (elapsed_secs % 60) % 4;
             static const Icon* const count_anim[5] = {
                 &I_HappyFlipper_128x64, &I_G0ku, &I_g0ku_1, &I_g0ku_2, &I_g0ku_3};
             canvas_draw_icon(canvas, -5, 15, count_anim[elapsed_secs_img]);

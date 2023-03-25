@@ -451,7 +451,7 @@ static bool archive_is_dir_exists(FuriString* path) {
     FileInfo file_info;
     Storage* storage = furi_record_open(RECORD_STORAGE);
     if(storage_common_stat(storage, furi_string_get_cstr(path), &file_info) == FSE_OK) {
-        if(file_info.flags & FSF_DIRECTORY) {
+        if(file_info_is_dir(&file_info)) {
             state = true;
         }
     }
@@ -501,7 +501,7 @@ void archive_switch_tab(ArchiveBrowserView* browser, InputKey key) {
             // Hide dot files everywhere except Browser
             bool hide_dot_files = (strcmp(archive_get_tab_ext(tab), "*") == 0) ? false : true;
             archive_file_browser_set_path(
-                browser, browser->path, archive_get_tab_ext(tab), skip_assets, false);
+                browser, browser->path, archive_get_tab_ext(tab), skip_assets, hide_dot_files);
             tab_empty = false; // Empty check will be performed later
         }
     }
@@ -532,11 +532,15 @@ void archive_enter_dir(ArchiveBrowserView* browser, FuriString* path) {
         browser->view, ArchiveBrowserViewModel * model, { idx_temp = model->item_idx; }, false);
 
     furi_string_set(browser->path, path);
+
     file_browser_worker_folder_enter(browser->worker, path, idx_temp);
 }
 
 void archive_leave_dir(ArchiveBrowserView* browser) {
     furi_assert(browser);
+
+    size_t dirname_start = furi_string_search_rchar(browser->path, '/');
+    furi_string_left(browser->path, dirname_start);
 
     file_browser_worker_folder_exit(browser->worker);
 }
